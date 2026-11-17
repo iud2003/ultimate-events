@@ -59,3 +59,6 @@
 .intro .stats{margin-top:170px}
 @media(max-width:800px){.intro::before{top:auto;bottom:190px;right:3%;width:65%}.intro .stats{margin-top:145px}}
 @media(max-width:450px){.intro::before{bottom:180px;width:75%}.intro .stats{margin-top:130px}}
+/* Raise the About copy while preserving space below it for the truck. */
+.intro-grid{margin-top:55px}
+@media(max-width:800px){.intro-grid{margin-top:38px}}
