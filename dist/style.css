@@ -46,3 +46,4 @@
 @media(max-width:800px){.intro::before{top:31%;right:2%;width:78%;opacity:.18}}
 .intro::before{opacity:1}
 @media(max-width:800px){.intro::before{opacity:1}}
+@media (prefers-reduced-motion: no-preference){.intro::before{transform:translateX(var(--truck-shift,0px));will-change:transform}}

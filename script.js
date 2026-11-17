@@ -30,3 +30,21 @@ if(stats && 'IntersectionObserver' in window && !window.matchMedia('(prefers-red
   },{threshold:.35});
   counterObserver.observe(stats);
 }
+
+if(intro && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  let truckFramePending=false;
+  const updateTruck=()=>{
+    const bounds=intro.getBoundingClientRect();
+    const viewport=window.innerHeight;
+    const progress=Math.max(0,Math.min(1,(viewport-bounds.top)/(viewport+bounds.height)));
+    const distance=Math.min(window.innerWidth*.28,360);
+    intro.style.setProperty('--truck-shift',`${-progress*distance}px`);
+    truckFramePending=false;
+  };
+  const requestTruckUpdate=()=>{
+    if(!truckFramePending){truckFramePending=true;requestAnimationFrame(updateTruck)}
+  };
+  window.addEventListener('scroll',requestTruckUpdate,{passive:true});
+  window.addEventListener('resize',requestTruckUpdate);
+  requestTruckUpdate();
+}
