@@ -40,4 +40,3 @@
 .hero-content{transform:translateY(-38%)}
 .clients-hero{padding-top:200px}
 @media(max-width:800px){.hero{height:100vh}.clients-hero{padding-top:160px}}
-.intro{background:linear-gradient(rgba(243,241,236,.86),rgba(243,241,236,.86)),url('assets/Designer%20(2).png') center center/cover no-repeat}
