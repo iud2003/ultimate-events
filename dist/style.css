@@ -40,3 +40,7 @@
 .hero-content{transform:translateY(-38%)}
 .clients-hero{padding-top:200px}
 @media(max-width:800px){.hero{height:100vh}.clients-hero{padding-top:160px}}
+/* Decorative truck sits behind all About section content. */
+.intro{position:relative;isolation:isolate;overflow:hidden}
+.intro::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:25%;right:8%;width:min(52%,760px);aspect-ratio:3 / 1;background:url('assets/about-truck.png') center/contain no-repeat;opacity:.28}
+@media(max-width:800px){.intro::before{top:31%;right:2%;width:78%;opacity:.18}}
