@@ -54,3 +54,8 @@
 .intro .stats{position:relative;z-index:1;margin-top:250px}
 @media(max-width:800px){.intro::before{top:auto;bottom:190px;right:5%;width:70%;opacity:1}.intro .stats{margin-top:185px}}
 @media(max-width:450px){.intro::before{bottom:170px;width:85%}.intro .stats{margin-top:150px}}
+/* Keep the moving truck in a compact lane above the statistics. */
+.intro::before{bottom:calc(100% - 540px);right:5%;width:min(38%,570px)}
+.intro .stats{margin-top:170px}
+@media(max-width:800px){.intro::before{top:auto;bottom:190px;right:3%;width:65%}.intro .stats{margin-top:145px}}
+@media(max-width:450px){.intro::before{bottom:180px;width:75%}.intro .stats{margin-top:130px}}
