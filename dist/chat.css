@@ -1,0 +1,93 @@
+.event-chat {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 100;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+}
+
+.event-chat button {
+  border: 0;
+  border-radius: .4rem;
+  padding: .7rem 1rem;
+  background: #c51f2d;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.event-chat button:disabled { opacity: .65; cursor: wait; }
+
+.event-chat-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + .65rem);
+  display: flex;
+  flex-direction: column;
+  width: min(23rem, calc(100vw - 2rem));
+  max-height: min(32rem, calc(100dvh - 5.5rem));
+  border: 1px solid #474747;
+  border-radius: .75rem;
+  background: #141414;
+  box-shadow: 0 .75rem 2rem #0007;
+}
+
+.event-chat-panel[hidden] { display: none; }
+
+.event-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem .85rem;
+  border-bottom: 1px solid #474747;
+}
+
+.event-chat-header h2 { margin: 0; font: 600 1.15rem "Oswald", sans-serif; }
+.event-chat-header .event-chat-close { background: transparent; font-size: 1.3rem; }
+
+.event-chat-log {
+  min-height: 0;
+  overflow-y: auto;
+  padding: .85rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.event-chat-log p {
+  flex: none;
+  align-self: start;
+  max-width: 93%;
+  margin: 0;
+  padding: .6rem .75rem;
+  border-radius: .45rem;
+  background: #292929;
+  color: #fff;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.event-chat-log [data-role="user"] { align-self: end; background: #9b1d29; }
+.event-chat-status { margin: 0 .85rem; color: #e1e1e1; font-size: .85rem; }
+.event-chat-form { display: flex; gap: .5rem; padding: .65rem .85rem; }
+.event-chat-form input {
+  flex: 1;
+  min-width: 0;
+  padding: .55rem;
+  border: 1px solid #707070;
+  border-radius: .4rem;
+  background: #202020;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.event-chat-handoff {
+  margin: 0 .85rem .85rem;
+  color: #fff;
+  text-decoration: underline;
+  font-size: .9rem;
+}
