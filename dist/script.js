@@ -31,3 +31,23 @@ if(stats && 'IntersectionObserver' in window && !window.matchMedia('(prefers-red
   counterObserver.observe(stats);
 }
 
+const galleries=document.querySelectorAll('[data-gallery]');
+if(galleries.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  galleries.forEach((gallery,index)=>{
+    const slides=[...gallery.querySelectorAll('.service-slide')];
+    if(slides.length<2)return;
+    let active=0;
+    let timer;
+    const showNext=()=>{
+      slides[active].classList.remove('is-active');
+      active=(active+1)%slides.length;
+      slides[active].classList.add('is-active');
+    };
+    const start=()=>{timer=window.setInterval(showNext,3200+(index*600))};
+    const stop=()=>window.clearInterval(timer);
+    start();
+    gallery.addEventListener('mouseenter',stop);
+    gallery.addEventListener('mouseleave',start);
+  });
+}
+
